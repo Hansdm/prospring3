@@ -5,22 +5,22 @@ import com.apress.prospring3.ch4.MessageRenderer;
 
 public class StandardOutMessageRenderer implements MessageRenderer {
 
-	private MessageProvider messageProvider = null;
-	
-	public void render() {
-		if (messageProvider == null){
-			throw new RuntimeException("You must set the property messageProvider of class:"
-					+ StandardOutMessageRenderer.class.getName());
-		}
-		System.out.println(messageProvider.getMessage());
-	}
+    private MessageProvider messageProvider = null;
 
-	public void setMessageProvider(MessageProvider provider) {
-		this.messageProvider = provider;
-	}
+    public void render() {
+        if (messageProvider == null) {
+            throw new RuntimeException("You must set the property messageProvider of class:"
+                    + StandardOutMessageRenderer.class.getName());
+        }
+        System.out.println(messageProvider.getMessage());
+    }
 
-	public MessageProvider getMessageProvider() {
-		return this.messageProvider;
-	}
+    public void setMessageProvider(MessageProvider provider) {
+        this.messageProvider = provider;
+    }
+
+    public MessageProvider getMessageProvider() {
+        return this.messageProvider;
+    }
 
 }
