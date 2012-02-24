@@ -13,4 +13,21 @@
                   http://www.springframework.org/schema/util/spring-util-3.1.xsd">
     <bean id="messageRenderer" class="com.apress.prospring3.ch4.xml.StandardOutMessageRenderer"/>
     <bean id="messageProvider" class="com.apress.prospring3.ch4.xml.HelloWorldMessageProvider"/>
+    
+    <bean id="inheritParent" class="com.apress.prospring3.ch4.inheritance.SimpleBean">
+        <property name="name">
+            <value>Clarence Ho</value>
+        </property>
+        <property name="age">
+            <value>22</value>
+        </property>
+    </bean>
+    
+    <bean id="inheritChild" class="com.apress.prospring3.ch4.inheritance.SimpleBean"
+          parent="inheritParent">
+        <property name="age">
+            <value>35</value>
+        </property>
+    </bean>
+
 </beans>
